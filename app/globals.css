@@ -118,3 +118,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Font Setup */
+:root{
+  --font-NunitoSans: 'nunitosans', sans-serif;
+}
+body{
+  font-family: var(--font-NunitoSans);
+}
