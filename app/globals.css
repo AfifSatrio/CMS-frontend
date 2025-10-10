@@ -126,3 +126,11 @@
 body{
   font-family: var(--font-NunitoSans);
 }
+
+@theme{
+  --color-blueAzure: #3A7AC3;
+  --color-verdigris: #38C0A8;
+  --color-cyberGrape: #534581;
+  --color-vermilion: #F93232;
+  --color-topaz: #FFC973;
+}
