@@ -1,9 +1,7 @@
 import { type Metadata } from 'next'
-import { ClerkProvider } from '@clerk/nextjs'
 import '../globals.css'
 import localFont from 'next/font/local';
-import Header from '@/components/Header';
-import Sidebar from '@/components/Sidebar';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
 const NunitoSans = localFont({
   src: '../fonts/NunitoSans.woff2',
@@ -22,14 +20,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+    <SidebarProvider>
       <html lang='en'>
         <body className={`${NunitoSans.variable} antialiased`}>
-          <Header />
-          <Sidebar />
           { children }
         </body>
       </html>
-    </ClerkProvider>
+    </SidebarProvider>
   )
 }
