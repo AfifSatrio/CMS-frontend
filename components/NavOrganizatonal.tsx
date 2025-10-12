@@ -18,13 +18,13 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
 
-export function NavMain({
+export function NavOrganizatonal({
   items,
 }: {
   items: {
     title: string
     url: string
-    icon?: LucideIcon
+    icon: LucideIcon
     isActive?: boolean
     items?: {
       title: string
@@ -34,16 +34,16 @@ export function NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Organizational Projects</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
-            key={item.title}
-            asChild
-            defaultOpen={item.isActive}
-            className="group/collapsible"
+          key={item.title}
+          asChild
+          defaultOpen={item.isActive}
+          className="group/collapsible"
           >
             <SidebarMenuItem>
+            <SidebarGroupLabel>Organizational Projects</SidebarGroupLabel>
               <CollapsibleTrigger asChild>
                 <SidebarMenuButton tooltip={item.title}>
                   {item.icon && <item.icon />}

@@ -1,10 +1,10 @@
 import { Bell, FileCode2, Folder, Frame } from "lucide-react";
 
 export const sidebarData = {
-    navHeader: [
+    navDashboard: [
         {
         title: "Dashboard",
-        url: "#",
+        url: "/dashboard",
         icon: FileCode2,
         },
     ],
@@ -17,15 +17,15 @@ export const sidebarData = {
       items: [
         {
           title: "Projects",
-          url: "#",
+          url: "/projects",
         },
         {
           title: "Collaborator",
-          url: "#",
+          url: "/collaborator",
         },
         {
           title: "Setting",
-          url: "#",
+          url: "/setting",
         },
       ],
     },
@@ -33,12 +33,12 @@ export const sidebarData = {
   projects: [
     {
       name: "Personal Project",
-      url: "#",
+      url: "/personalproject",
       icon: FileCode2,
     },
     {
         name: "Notification",
-        url: "#",
+        url: "/notification",
         icon: Bell,
     }
   ],
@@ -46,7 +46,6 @@ export const sidebarData = {
     {
         name: "CMLabs #20",
         url: "#",
-        plan: "Professional",
         logo: Frame,
     }
   ]

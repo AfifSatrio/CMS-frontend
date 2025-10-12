@@ -23,17 +23,15 @@ export function NavProjects({
 }) {
 
   return (
-    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+    <SidebarGroup>
       <SidebarGroupLabel>Personal Projects</SidebarGroupLabel>
       <SidebarMenu>
-        {projects.map((item) => (
-          <SidebarMenuItem key={item.name}>
-            <SidebarMenuButton asChild>
-              <a href={item.url}>
-                <item.icon />
-                <span>{item.name}</span>
-              </a>
-            </SidebarMenuButton>
+        {projects.map((projects) => (
+          <SidebarMenuItem key={projects.name}>
+            <SidebarMenuButton tooltip={projects.name}>
+                  {projects.icon && <projects.icon />}
+                  <span>{projects.name}</span>
+                </SidebarMenuButton>
           </SidebarMenuItem>
         ))}
         <SidebarMenuItem>
