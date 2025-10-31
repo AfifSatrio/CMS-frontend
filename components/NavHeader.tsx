@@ -1,26 +1,16 @@
-"use client"
+import React from 'react'
 
-import * as React from "react"
-import {
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar"
-export function NavHeader() {
+const NavHeader = () => {
   return (
-    <SidebarMenu>
-      <SidebarMenuItem>
-            <SidebarMenuButton
-              size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-            >
-              <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">CMLabs #20</span>
-              </div>
-            </SidebarMenuButton>
-      </SidebarMenuItem>
-    </SidebarMenu>
+    <div className='p-4 flex items-center gap-4'>
+      <div className='bg-white p-4 w-fit text-black rounded-2xl'>
+        Logo
+      </div>
+      <div className='font-semibold text-white'>
+        <h1>CMS Project #20</h1>
+      </div>
+    </div>
   )
 }
+
+export default NavHeader
