@@ -1,6 +1,4 @@
 import { recentActivityData } from '@/constants'
-import { ClockFading } from 'lucide-react'
-
 
 const activities = recentActivityData || []
 
@@ -16,13 +14,14 @@ const UserActivities = () => {
         >
             <div className='flex-1 items-center'>
                 <div className='flex justify-between'>
+                  <div className='pr-4'>
                     <h4 className='font-medium'>{items.action}</h4>
-                    <div className='flex gap-4 items-center'>
-                        <ClockFading className='text-sm text-gray-400'/>
+                    <p className='text-xs text-gray-500'>{items.desc}</p>
+                  </div>
+                    <div className='flex items-center pl-4'>
                         <span className='text-sm'>{items.time}</span>
                     </div>
                 </div>
-                <p className='text-xs text-gray-500'>{items.desc}</p>
             </div>
         </div>
         ))}

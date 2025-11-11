@@ -18,13 +18,13 @@ const Organization = () => {
                     <h4 className='font-medium'>{org.name}</h4>
                     <p className='text-sm'>{org.members} members • {org.project} projects</p>
                 </div>
-                <span className='text-xs text-gray-500'>{org.role}</span>
+                <span className='text-xs text-gray-500'></span>
             </div>
         </div>
         ))}
           </div>
         ) : (
-          <div className='text-center'>
+          <div className='text-center mt-12'>
             No Organization List
           </div>
         )}

@@ -1,16 +1,15 @@
 import { Bell, File, LayoutDashboard } from "lucide-react"
-import { ChartConfig } from "@/components/ui/chart"
 
 // Dashboard Data
 export const dashboardSidebarData = [
   { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
 ]
 
-export const sidebarMainData = [
-  { title: "Projects", href: "/projects"},
-  { title: "Collaborators", href: "/collaborator"},
-  { title: "Setting", href: "/setting" },
-]
+// export const sidebarMainData = [
+//   { title: "Projects", href: "/projects"},
+//   { title: "Collaborators", href: "/collaborator"},
+//   { title: "Setting", href: "/setting" },
+// ]
 
 export const sidebarPersonalData = [
   { title: "Personal Project", href: "/personal", icon: File },
@@ -19,9 +18,7 @@ export const sidebarPersonalData = [
 
 export const breadcrumbData = [
   { title: "Dashboard", href: "/dashboard" },
-  { title: "Projects", href: "/projects"},
-  { title: "Collaborators", href: "/collaborator"},
-  { title: "Setting", href: "/setting" },
+  { title: "Organizational", href: "/organizational"},
   { title: "Personal Project", href: "/personal" },
   { title: "Notifications", href: "/notification" },
 ]
@@ -71,15 +68,87 @@ export const recentActivityData = [
 ]
 
 // List Organization Data Dummy
+export interface organizationRole {
+  name: string;
+  color: string;
+}
+
+export interface organization {
+  id: number;
+  name: string;
+  members: number;
+  project: number;
+  role: organizationRole;
+}
+
 export const listOrganizationData = [
-  { id: 1, name: "CMLabs - 20", members: 12, project: 4, role: "Admin" },
-  { id: 2, name: "CMS Pegadaian", members: 5, project: 3, role: "Member" },
-  { id: 3, name: "DIGIRAYA", members: 7, project: 10, role: "Collaborator" },
+  { 
+    id: 1, name: "CMLabs - 20", members: 12, project: 4, 
+      role: {
+        name: "Owner",
+        color: "#59D7CB"
+      }
+  },
+  { id: 2, name: "CMS Pegadaian", members: 5, project: 3, 
+      role: {
+        name: "Collaborator",
+        color: "#FEC842"
+      }
+  },
+  { id: 3, name: "DIGIRAYA", members: 7, project: 10, 
+      role: {
+        name: "Collaborator",
+        color: "#FEC842"
+      } 
+  },
 ]
 
 // Notification
 export const notifications = [
 
+]
+
+// Project Card Data
+export const projectDetailData = [
+  { title: "Total Personal Project", enum: "193"},
+  { title: "Total Organization Project", enum: "193"},
+  { title: "Total Organization", enum: "193"},
+  { title: "Total Collaborator", enum: "193"},
+]
+
+// Personal Projects Data Dummy
+export interface statusProject {
+  status: 'completed' | 'on-going' | 'overdue';
+  color: string;
+}
+
+export interface personalProjects {
+  id: number;
+  title: string;
+  lastUpdate: string;
+  status: statusProject;
+}
+
+export const personalProjectsData = [
+  { 
+    id: "1",title: "CMS CMLabs", lastUpdate: "03 Hours Ago", 
+    status: {
+      status: "completed",
+      color: "#38C0A8"
+    }
+  },
+  { id: "2",title: "CMS Pegadaian", lastUpdate: "20 Hours Ago",
+    status: {
+      status: "on-going",
+      color: "#FFD016"
+    }
+  },
+  { id: "3",title: "CMS Polinema", lastUpdate: "21 Mar 2025, 10:00",
+    status: {
+      status: "overdue",
+      color: "#F93232"
+    }
+  },
 ]
 
 

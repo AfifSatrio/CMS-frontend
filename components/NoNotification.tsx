@@ -7,7 +7,7 @@ const NoNotification = () => {
   return (
     <Empty>
         <EmptyHeader>
-            <EmptyMedia variant="icon" className='bg-blueAzure dark:bg-zinc-800'>
+            <EmptyMedia variant="icon" className='bg-blueAzure dark:bg-zinc-800 mt-50'>
                 <Bell className='text-white'/>
             </EmptyMedia>
             <EmptyTitle>

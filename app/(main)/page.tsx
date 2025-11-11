@@ -15,7 +15,7 @@ const DashboardPage = () => {
         <div className='p-4'>
           <AppChart />
         </div>
-        <div className='grid lg:grid-cols-2 grid-cols-1 p-4 gap-4'>
+        <div className='grid md:grid-cols-2 grid-cols-1 p-4 gap-4'>
           <RecentlyActivity />
           <ListOrganization />
         </div>

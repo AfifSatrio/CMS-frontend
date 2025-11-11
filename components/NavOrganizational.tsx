@@ -1,7 +1,7 @@
 import React from 'react'
 import { SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubItem } from './ui/sidebar'
 import { ChevronRight, Folder } from 'lucide-react'
-import { sidebarMainData } from '@/constants'
+// import { sidebarMainData } from '@/constants'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from './ui/collapsible'
 import Link from 'next/link'
 
@@ -9,7 +9,7 @@ const NavOrganizational = () => {
   return (
     <SidebarContent>
         <SidebarGroup>
-            <SidebarGroupLabel className=' font-semibold'>
+            <SidebarGroupLabel className='font-semibold'>
                 Organizational
             </SidebarGroupLabel>
             <SidebarMenu>
@@ -21,7 +21,7 @@ const NavOrganizational = () => {
                                 Organizational
                             </SidebarMenuButton>
                         </Link>
-                    <CollapsibleContent>
+                    {/* <CollapsibleContent>
                         <SidebarMenuSub>
                             {sidebarMainData.map((items) => (
                             <SidebarMenuSubItem key={items.title}>
@@ -33,7 +33,7 @@ const NavOrganizational = () => {
                             </SidebarMenuSubItem>   
                             ))}
                         </SidebarMenuSub>
-                    </CollapsibleContent>
+                    </CollapsibleContent> */}
                     </SidebarMenuItem>
                 </Collapsible>
             </SidebarMenu>
