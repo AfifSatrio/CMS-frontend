@@ -1,19 +1,14 @@
-import EmptyPersonalProjectsPage from '@/components/EmptyPersonalProjectsPage'
 import PersonalProjectTable from '@/components/PersonalProjectTable'
 import Searchbar from '@/components/Searchbar'
 import { SiteHeader } from '@/components/SiteHeader'
 import { Button } from '@/components/ui/button'
-import { personalProjectsData } from '@/constants'
 import React from 'react'
-
-const listPersonalProjectsData = personalProjectsData || []
 
 const PersonalProjectPage = () => {
   return (
     <div className='w-full'>
       <SiteHeader />
       <div>
-        {listPersonalProjectsData?.length ? (
           <div className='p-4'>
             <h2 className='font-semibold'>Projects</h2>
             <div className='flex items-center gap-4 p-4'>
@@ -24,11 +19,6 @@ const PersonalProjectPage = () => {
             </div>
             <PersonalProjectTable />
           </div>
-        ) : (
-          <div className='p-4'>
-            <EmptyPersonalProjectsPage />
-          </div>
-        )}
       </div>
     </div>
   )

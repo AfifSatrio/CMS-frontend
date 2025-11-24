@@ -9,7 +9,7 @@ import { dropdownData } from '@/constants'
 const FilterDataButton = () => {
   return (
     <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+        <DropdownMenuTrigger asChild className='cursor-pointer'>
             <Button variant="outline" className='group'>
                 <span>Filter Data</span>
                 <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]:rotate-90"/>
@@ -17,7 +17,7 @@ const FilterDataButton = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
         {dropdownData.map((items) => (
-            <DropdownMenuItem key={items.title}>
+            <DropdownMenuItem key={items.title} className='cursor-pointer'>
                 {items.title}
             </DropdownMenuItem>
         ))}

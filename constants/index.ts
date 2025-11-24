@@ -1,15 +1,10 @@
 import { Bell, File, LayoutDashboard } from "lucide-react"
+import { JSX } from "react";
 
 // Dashboard Data
 export const dashboardSidebarData = [
   { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
 ]
-
-// export const sidebarMainData = [
-//   { title: "Projects", href: "/projects"},
-//   { title: "Collaborators", href: "/collaborator"},
-//   { title: "Setting", href: "/setting" },
-// ]
 
 export const sidebarPersonalData = [
   { title: "Personal Project", href: "/personal", icon: File },
@@ -67,8 +62,14 @@ export const recentActivityData = [
   { id: 4, action: "Project Deadline Update", desc: "'CMS Project' deadline was updated by Irsyad Hifdhil", time: "2 Days Ago"},
 ]
 
-// List Organization Data Dummy
+//Data Dummy
 export interface organizationRole {
+  name: string;
+  color: string;
+}
+
+export interface projectStatus {
+  id: number;
   name: string;
   color: string;
 }
@@ -79,27 +80,127 @@ export interface organization {
   members: number;
   project: number;
   role: organizationRole;
+  slug?: string;
+  orgProject: organizationProject;
+}
+
+export interface organizationProject {
+  length: number;
+  map(arg0: (project: any) => JSX.Element): import("react").ReactNode;
+  id: number;
+  name: string;
+  role: organizationRole;
+  lastUpdate: string;
+  status: string;
+  collaborator: number;
+}
+
+export interface collaborator {
+  id: number;
+  name: string;
+  status: string;
+  role: organizationRole;
 }
 
 export const listOrganizationData = [
   { 
-    id: 1, name: "CMLabs - 20", members: 12, project: 4, 
-      role: {
+    id: 1, name: "CMLabs - 20", members: 5, project: 3, slug: "cmlabs-20", 
+    role: {
         name: "Owner",
         color: "#59D7CB"
+      },
+    collaborator: [
+      {
+        id: 10000, name: "Irsyad Hifdhil", status: "Active",
+        role: {
+          name: "Owner",
+          color: "#3A7AC3"
+        }
+      },
+      {
+        id: 10001, name: "Afif Satrio", status: "Active",
+        role: {
+          name: "Collaborator",
+          color: "#FEC842"
+        }
+      },
+      {
+        id: 10002, name: "Andita Tiffany", status: "Active",
+        role: {
+          name: "Collaborator",
+          color: "#FEC842"
+        }
+      },
+      {
+        id: 10003, name: "Shela Alin", status: "Pending",
+        role: {
+          name: "Collaborator",
+          color: "#FEC842"
+        }
+      },
+      {
+        id: 10004, name: "Ananda Putra", status: "Pending",
+        role: {
+          name: "Collaborator",
+          color: "#FEC842"
+        }
       }
+    ],
+    orgProject: [
+      {
+      id: 101, name: "CMS CMLabs", lastUpdate: "10 Minutes Ago", collaborator: 4,
+        role: {
+          name: "Super Admin",
+          color: "#3A7AC3"
+        },
+      status: {
+          id: "002",
+          name: "Pending",
+          color: "#FEC842"
+        }
+      },
+      {
+      id: 102, name: "CMS Pegadaian", lastUpdate: "2 Days Ago", collaborator: 3,
+        role: {
+          name: "Editor",
+          color: "#FEC842"
+        },
+        status: {
+          id: "001",
+          name: "Completed",
+          color: "#38C0A8"
+        }
+      },
+      {
+      id: 103, name: "CMS Polinema", lastUpdate: "A Long Ago", collaborator: 5,
+        role: {
+          name: "SEO Manager",
+          color: "#F648C0"
+        },
+      status: {
+          id: "003",
+          name: "Overdue",
+          color: "#F93232"
+        }
+      },
+    ], 
   },
-  { id: 2, name: "CMS Pegadaian", members: 5, project: 3, 
+  { id: 2, 
+    name: "CMS Pegadaian", members: 0, project: 0, slug:"cms-pegadaian", 
       role: {
         name: "Collaborator",
         color: "#FEC842"
-      }
+      },
+    orgProjects: [],
+    collaborator: [],
   },
-  { id: 3, name: "DIGIRAYA", members: 7, project: 10, 
+  { id: 3, name: "DIGIRAYA", members: 0, project: 0, slug: "digiraya", 
       role: {
         name: "Collaborator",
         color: "#FEC842"
-      } 
+      },
+    orgProjects: [],
+    collaborator: [],
   },
 ]
 
@@ -133,19 +234,19 @@ export const personalProjectsData = [
   { 
     id: "1",title: "CMS CMLabs", lastUpdate: "03 Hours Ago", 
     status: {
-      status: "completed",
+      status: "Completed",
       color: "#38C0A8"
     }
   },
   { id: "2",title: "CMS Pegadaian", lastUpdate: "20 Hours Ago",
     status: {
-      status: "on-going",
+      status: "On-Going",
       color: "#FFD016"
     }
   },
   { id: "3",title: "CMS Polinema", lastUpdate: "21 Mar 2025, 10:00",
     status: {
-      status: "overdue",
+      status: "Overdue",
       color: "#F93232"
     }
   },
