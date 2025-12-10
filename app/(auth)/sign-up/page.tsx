@@ -1,14 +1,13 @@
 "use client"; 
 
-import React, { useState } from 'react';
-import { Mail, Lock, Eye, EyeOff, Sun, Moon, User } from "lucide-react"; 
+import { useState } from 'react';
+import { Mail, Eye, EyeOff, User } from "lucide-react"; 
 import { DarkModeButton } from '@/components/DarkModeButton';
 
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-zinc-900">
