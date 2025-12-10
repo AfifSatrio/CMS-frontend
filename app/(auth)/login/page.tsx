@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'; 
 import { Mail, Lock, Eye, EyeOff, Sun, Moon } from "lucide-react"; 
+import { DarkModeButton } from '@/components/DarkModeButton';
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,25 +40,11 @@ const LoginPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-zinc-900">
       <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg dark:bg-zinc-800">
-        
-        <h1 className="text-center text-3xl font-bold text-gray-900 dark:text-white">
-          Login
-        </h1>
-        
-        <div className="my-4 flex justify-end">
-          <div className="flex items-center gap-2">
-            <Sun className={`h-5 w-5 ${isDarkMode ? 'text-gray-400' : 'text-yellow-500'}`} />
-            <label className="relative inline-flex cursor-pointer items-center">
-              <input 
-                type="checkbox" 
-                className="peer sr-only" 
-                checked={isDarkMode}
-                onChange={() => setIsDarkMode(!isDarkMode)}
-              />
-              <div className="peer h-5 w-9 rounded-full bg-gray-200 after:absolute after:left-[2px] after:top-[2px] after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-gray-600 dark:bg-gray-700"></div>
-            </label>
-            <Moon className={`h-5 w-5 ${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
-          </div>
+        <div className='flex items-center justify-end gap-30 mb-5'>
+          <h1 className="text-center text-3xl font-bold text-gray-900 dark:text-white">
+            Login
+          </h1>
+          <DarkModeButton />
         </div>
         
         <p className="mb-6 text-center text-sm text-gray-600 dark:text-gray-300">
@@ -166,7 +153,7 @@ const LoginPage = () => {
         
         <p className="mt-8 text-center text-sm text-gray-600 dark:text-gray-300">
           Haven't joined yet?{" "}
-          <a href="/signup" className="font-medium text-blue-600 hover:underline dark:text-blue-400">
+          <a href="/sign-up" className="font-medium text-blue-600 hover:underline dark:text-blue-400">
             SignUp today
           </a>
         </p>

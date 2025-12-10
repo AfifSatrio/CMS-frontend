@@ -1,6 +1,8 @@
 import { type Metadata } from 'next'
 import '../globals.css'
-import { ThemeProvider } from 'next-themes'
+import { SidebarFooter, SidebarProvider } from '@/components/ui/sidebar';
+import  AppSidebar  from '@/components/AppSidebar';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'CMS CMLabs',
@@ -12,15 +14,13 @@ export default function MainLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <div>
-      <ThemeProvider 
+  return (   
+    <ThemeProvider 
         attribute="class"
         defaultTheme='system'
         enableSystem
         disableTransitionOnChange>
         {children}
-        </ThemeProvider>
-    </div>
+    </ThemeProvider>
   )
 }

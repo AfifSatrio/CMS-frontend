@@ -1,15 +1,8 @@
 import { type Metadata } from 'next'
 import '../globals.css'
-import localFont from 'next/font/local';
-import { SidebarProvider } from '@/components/ui/sidebar';
+import { SidebarFooter, SidebarProvider } from '@/components/ui/sidebar';
 import  AppSidebar  from '@/components/AppSidebar';
 import { ThemeProvider } from '@/components/ThemeProvider';
-
-const NunitoSans = localFont({
-  src: '../fonts/NunitoSans.woff2',
-  variable: '--font-NunitoSans',
-  weight: "100 900",
-})
 
 export const metadata: Metadata = {
   title: 'CMS CMLabs',
@@ -23,19 +16,14 @@ export default function MainLayout({
 }>) {
   return (
     <SidebarProvider>
-      <AppSidebar />
-          <html lang='en' suppressHydrationWarning>
-            <body className={`${NunitoSans.variable} antialiased`}>
-              <ThemeProvider
-                attribute="class"
-                defaultTheme='system'
-                enableSystem
-                disableTransitionOnChange
-                >
-                { children }
-              </ThemeProvider>
-          </body>
-        </html>
+      <AppSidebar />          
+        <ThemeProvider 
+          attribute="class"
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
     </SidebarProvider>
   )
 }

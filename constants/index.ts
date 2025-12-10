@@ -252,4 +252,18 @@ export const personalProjectsData = [
   },
 ]
 
+// Plan Data
+export const plan = [
+  { id: "1", plan: "Free/Demo", price:"Rp 40.000", desc: "Suitable for individual to demo and explore cmlabs CMS", features: ["1 User", "5 Personal Projects", "500K / Month API Calls", "100 File Media Assets", "SEO Integrated"]
+  },
+  { id: "2", plan: "Professional", price:"Rp 80.000", desc: "Suitable for individual to demo and explore cmlabs CMS", features: ["10 User for Organization (must Pro)", "50 Personal Projects", "10 Organization (20 Projects)", "5 Million / Month API Calls", "5000 File Media Assets", "SEO Integrated", "AI Assistance", "Custom Domain"]
+  },
+  { id: "3", plan: "Enterprise", price:"Rp160.000", desc: "Suitable for companies needing scalability, advanced features, and smooth collaboration", features: ["10 User for Organization (must Pro)", "Unlimited Personal Projects", "10 Organization (20 Projects)", "10 Million / Month API calls", "Unlimited File Media Assets", "SEO Integrated", "AI Assistance", "Custom Domain"]
+  },
+  { id: "4", plan: "White Label", price:"", desc: "Take full ownership of the CMS platform, deploy it under your infrastructure, with your own branding and configurations.", features: ["Full Source Code Access", "Fully Configurable Modules", "Custom Branding", "CMS Ownership", "Lifetime License"]
+  },
+]
 
+
+
+5

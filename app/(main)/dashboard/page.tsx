@@ -3,7 +3,6 @@ import ListOrganization from '@/components/ListOrganization'
 import ProjectDetail from '@/components/ProjectDetail'
 import RecentlyActivity from '@/components/RecentlyActivity'
 import { SiteHeader } from '@/components/SiteHeader'
-import React from 'react'
 
 const DashboardPage = () => {
   return (
