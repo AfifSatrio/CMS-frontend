@@ -1,3 +1,4 @@
+import Link from "next/link";
 import EmptyOrganizationPage from '@/components/EmptyOrganizationPage'
 import OrganizationTable from '@/components/OrganizationTable'
 import Searchbar from '@/components/Searchbar'
@@ -11,23 +12,29 @@ const organizationData = listOrganizationData || []
 const OrganizationalPage = () => {
   return (
     <div className='w-full'>
-        <SiteHeader />
-        {organizationData?.length ? (
-          <div className='p-4'>
-              <h2 className='font-semibold'>Organizational Projects</h2>
-            <div className='flex items-center p-4 gap-4'>
-              <Searchbar />
-              <Button variant="outline" className='cursor-pointer'>
+      <SiteHeader />
+
+      {organizationData.length ? (
+        <div className='p-4'>
+          <h2 className='font-semibold'>Organizational Projects</h2>
+
+          <div className='flex items-center p-4 gap-4'>
+            <Searchbar />
+
+            <Link href="/content-builder/home">
+              <Button variant="outline" className="cursor-pointer">
                 Create Organization
               </Button>
-            </div>
-              <OrganizationTable />
+            </Link>
           </div>
-        ) : (
-          <div className='p-4'>
-            <EmptyOrganizationPage />
-          </div>
-        )}
+
+          <OrganizationTable />
+        </div>
+      ) : (
+        <div className='p-4'>
+          <EmptyOrganizationPage />
+        </div>
+      )}
     </div>
   )
 }
