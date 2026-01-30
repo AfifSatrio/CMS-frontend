@@ -11,13 +11,6 @@ export const sidebarPersonalData = [
   { title: "Notifications", href: "/notification", icon: Bell },
 ]
 
-export const breadcrumbData = [
-  { title: "Dashboard", href: "/dashboard" },
-  { title: "Organizational", href: "/organizational"},
-  { title: "Personal Project", href: "/personal" },
-  { title: "Notifications", href: "/notification" },
-]
-
 // Pie Chart Data
 export interface PieChartDataItem{
   title: string;
