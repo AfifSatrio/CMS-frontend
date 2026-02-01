@@ -1,0 +1,3 @@
+[submodule "BECMS"]
+	path = BECMS
+	url = https://github.com/HalfTenshi/BECMS.git
